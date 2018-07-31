@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="sampleFlow" doc:id="1cd1ee9d-e4bc-4a9c-8fa7-7701e8693e2c" >
+		<http:listener doc:name="Listener" doc:id="d114fa09-62d4-453e-a241-2bb7d6c09d17" config-ref="api-httpListenerConfig" path="/sample/test">
+			<ee:repeatable-file-store-stream />
+		</http:listener>
+		<logger level="INFO" doc:name="Logger" doc:id="87f226ca-80fe-4066-bce9-51a6b2b65734" />
+		<set-payload value="Success" doc:name="Set Payload" doc:id="e9ca8156-90f8-4b9f-9d61-3762b129b4ec" />
+	</flow>
+</mule>

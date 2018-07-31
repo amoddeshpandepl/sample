@@ -1,0 +1,29 @@
+{
+  "configs": [
+    "router.xml",
+    "sample.xml",
+    "config.xml",
+    "logic.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "sample",
+  "minMuleVersion": "4.1.1",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedResources": [
+        "api/api.raml",
+        "apiconfig.properties",
+        "config-sample.yaml",
+        "config-shared.yaml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

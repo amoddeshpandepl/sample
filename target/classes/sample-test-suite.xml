@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="sample-test-suite.xml" />
+	<munit:test name="sample-test-suite-sampleFlowTest" description="Test" doc:id="7f0d43b5-6c0f-40c5-856e-67a558d66ee1" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to sampleFlow" doc:id="6ce1ffd3-5612-448d-9e2c-18e3c0dd25e1" name="sampleFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="803e7bfa-eab5-4df9-b1bb-89f5464e7717" expression="#[payload]" is='#["Success"]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
